@@ -31,7 +31,13 @@ function addElement() {
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
+    var percent = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100)
+    percentageElement.innerText = percent;
+
+    /* Update donut */
+    var donutElement = document.getElementById("donut");
+    var donutImage =
+        switch(percent)
 }
 
 /*
