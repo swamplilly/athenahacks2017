@@ -84,5 +84,5 @@ function turnPage(event) {
  * ADD ANOTHER TEXT SECTION TO CURRENT PAGE
  */
 function addPage(event) {
-    document.body.innerHTML += eval(event);
+    document.getElementById("page") += eval(event);
 }
