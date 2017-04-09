@@ -14,6 +14,12 @@ a {
     color: orange;
 }
 
+#donut img {
+    width: 100%;
+    height: 100px;
+    width: 100px;
+}
+
 #titlewrapper {
     margin: 0 auto;
     display: table;

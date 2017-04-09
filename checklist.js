@@ -5,6 +5,138 @@ var karma = 0;
 var allItems = 0;
 var finishedItems = 0;
 
+function getDonut(percent) {
+switch(parseInt(percent)) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        return '<img src="img/donuts/donutparts/100.png">'
+        break;
+
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        return '<img src="img/donuts/donutparts/96.png">'
+        break;
+
+
+        case 10:
+        case 11:
+        case 12:
+        case 13:
+        case 14:
+        return '<img src="img/donuts/donutparts/92.png">'
+        break;
+
+        case 15:
+        case 16:
+        case 17:
+        case 18:
+        case 19:
+        return '<img src="img/donuts/donutparts/88.png">'
+        break;
+
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        return '<img src="img/donuts/donutparts/84.png">'
+        break;
+
+        case 24:
+        case 25:
+        case 26:
+        case 27:
+        return '<img src="img/donuts/donutparts/80.png">'
+        break;
+
+        case 28:
+        case 29:
+        case 30:
+        return '<img src="img/donuts/donutparts/76.png">'
+        break;
+
+        case 32:
+        return '<img src="img/donuts/donutparts/72.png">'
+        break;
+
+        case 36:
+        return '<img src="img/donuts/donutparts/68.png">'
+        break;
+
+        case 40:
+        return '<img src="img/donuts/donutparts/64.png">'
+        break;
+
+        case 44:
+        return '<img src="img/donuts/donutparts/60.png">'
+        break;
+
+        case 48:
+        return '<img src="img/donuts/donutparts/56.png">'
+        break;
+
+        case 52:
+        return '<img src="img/donuts/donutparts/52.png">'
+        break;
+
+        case 56:
+        return '<img src="img/donuts/donutparts/48.png">'
+        break;
+
+        case 60:
+        return '<img src="img/donuts/donutparts/44.png">'
+        break;
+
+        case 64:
+        return '<img src="img/donuts/donutparts/40.png">'
+        break;
+
+        case 68:
+        return '<img src="img/donuts/donutparts/36.png">'
+        break;
+
+        case 72:
+        return '<img src="img/donuts/donutparts/32.png">'
+        break;
+
+        case 76:
+        return '<img src="img/donuts/donutparts/28.png">'
+        break;
+
+        case 80:
+        return '<img src="img/donuts/donutparts/24.png">'
+        break;
+
+        case 84:
+        return '<img src="img/donuts/donutparts/20.png">'
+        break;
+
+        case 88:
+        return '<img src="img/donuts/donutparts/15.png">'
+        break;
+
+        case 92:
+        return '<img src="img/donuts/donutparts/10.png">'
+        break;
+
+        case 96:
+        return '<img src="img/donuts/donutparts/05.png">'
+        break;
+
+        case 100:
+        return '<img src="img/donuts/donutparts/00.png">'
+        break;
+
+        default:
+        return '<img src="img/donuts/donutparts/56.png">'
+    }
+}
+
 /*
  * Add an element to the to-do list.
  */
@@ -17,17 +149,17 @@ function addElement() {
 
     /* Add an item to the list */
     listElement.innerHTML +=
-        '<li class="not done">\
+        `<li class="not done">\
             <button onclick="remove(this)">\
                 Delete\
             </button>\
             <button onclick="done(this)">\
                 Done\
             </button>\
-            <span class="item">' +
+            <span class="item">` +
                 valToAdd +
-            '</span>\
-        </li>';
+            `</span>\
+        </li>`;
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
@@ -36,8 +168,9 @@ function addElement() {
 
     /* Update donut */
     var donutElement = document.getElementById("donut");
-    var donutImage =
-        switch(percent)
+    var donutImage = getDonut(percent);
+    donutElement.innerHTML = donutImage;
+        
 }
 
 /*
@@ -61,7 +194,14 @@ function done(self) {
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
+    var percent = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100)
+    percentageElement.innerText = percent;
+
+    /* Update donut */
+    var donutElement = document.getElementById("donut");
+    var donutImage = getDonut(percent);
+    donutElement.innerHTML = donutImage;
+
 }
 
 /*
@@ -77,7 +217,13 @@ function remove(self) {
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
+    var percent = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100)
+    percentageElement.innerText = percent;
+
+    /* Update donut */
+    var donutElement = document.getElementById("donut");
+    var donutImage = getDonut(percent);
+    donutElement.innerHTML = donutImage;
 }
 
 /*
