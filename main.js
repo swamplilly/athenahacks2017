@@ -8,6 +8,8 @@ var finishedItems = 0;
 function addElement() {
     var listElement = document.getElementById("list");
     var valToAdd = document.getElementById("val").value;
+
+    /* Update global variables */
     allItems += 1;
 
     /* Add an item to the list */
@@ -26,7 +28,7 @@ function addElement() {
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
 }
 
 /*
@@ -50,37 +52,29 @@ function done(self) {
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
 }
 
 /*
  * Remove an item from the to-do list.
  */
 function remove(self) {
-    if (self.classList.contains("not")) {
-        allItems -= 1;
-    } else {
-        finishedItems -=1;
-        allItems -=1;
-    }
+    /* Update global variables */
+    if (!self.parentElement.classList.contains("not")) { (finishedItems > 0 ? finishedItems -= 1 : finishedItems = 0); }
+    (allItems > 0 ? allItems -= 1 : allItems = 0);
 
     /* Remove li element */
     self.parentElement.remove();
 
     /* Update percentage */
     var percentageElement = document.getElementById("percentage");
-    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / (allItems == 0 ? 1 : allItems)) * 100);
 }
 
 /*
  * Calculate stats after finishing a day.
  */
 function finishDay() {
-    /* Update day number */
-    var dayElement = document.getElementById("day");
-    var dayNumber = parseInt(dayElement.innerText);
-    dayElement.innerText = dayNumber + 1;
-
     /* Deciding the storyline based on day's stats */
     var finalPercentage = parseInt(document.getElementById("percentage").innerText);
     if (finalPercentage <= 33) {
@@ -93,6 +87,29 @@ function finishDay() {
         window.alert("Your score for today is 3.");
         karma += 3;
     }
+
+    /* Update percentage */
+    var listElements = document.getElementsByClassName("done");
+    var notDoneCount = document.getElementsByClassName("not").length;
+    var percentageElement = document.getElementById("percentage");
+    allItems = notDoneCount;
+    finishedItems = 0;
+    percentageElement.innerText = 0;
+
+    /* Clear finished items */
+    var i = 0;
+    while (listElements[i]) {
+        if (listElements[i].classList.contains("not")) {
+            i++;
+        } else {
+            listElements[i].remove();
+        }
+    }
+
+    /* Update day number */
+    var dayElement = document.getElementById("day");
+    var dayNumber = parseInt(dayElement.innerText);
+    dayElement.innerText = dayNumber + 1;
 
     /* Update karma */
     var karmaElement = document.getElementById("karma");
