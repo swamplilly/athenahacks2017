@@ -82,12 +82,18 @@ function finishDay() {
     var finalPercentage = parseInt(document.getElementById("percentage").innerText);
     if (finalPercentage <= 33) {
         window.alert("Your score for today is 1.");
+        karma += 1;
     } else if (finalPercentage <= 66) {
         window.alert("Your score for today is 2.");
+        karma += 2;
     } else {
         window.alert("Your score for today is 3.");
+        karma += 3;
     }
 
     /* Update karma */
     var karmaElement = document.getElementById("karma");
+    var karmaNow = karma / dayNumber;
+    karmaElement.innerText = karmaNow.toFixed(1);
+
 }
