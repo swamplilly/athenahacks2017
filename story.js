@@ -73,6 +73,31 @@ var checkList =
     You think you have found the answer to blend in well on Earth now. You start to \
     <a href="checklist.html">add and delete things according to what you want</a>.';
 
+var crime_1 = 
+`
+<br>
+WE KNOW YOU ARE HIDING. TURN YOURSELF IN IMMEDIATELY OR FACE 
+<a href="#" onclick="addPage('warning')">ADDITIONAL CONSEQUENCES</a>`;
+
+var warning = 
+`
+<br>
+YOU HAVE BEEN <a href="#" onclick="turnPage('earth')">WARNED.</a>`;
+
+
+var earth = 
+`
+<br>
+Huh.. what is this <a href="#" onclick="addPage('habitable')">place</a>`;
+
+var habitable = 
+`
+<br>
+The atmosphere seems habitable. I'd better hideout here until the Galactic Federation
+ <a href="#" onclick="turnPage('crash')">leaves me alone..</a>` ;
+
+
+
 /*
  * TURN PAGES.
  */
