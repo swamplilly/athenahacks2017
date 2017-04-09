@@ -4,11 +4,11 @@ var karma = 0;
  * Add an element to the to-do list.
  */
 function addElement() {
-    var listDiv = document.getElementById("list");
+    var listElement = document.getElementById("list");
     var valToAdd = document.getElementById("val").value;
 
     /* Add an item to the list */
-    listDiv.innerHTML +=
+    listElement.innerHTML +=
         '<li class="not done">\
             <button onclick="remove(this)">\
                 Delete\
@@ -24,9 +24,9 @@ function addElement() {
     /* Update percentage */
     var allItems = document.querySelectorAll(".item").length;
     var finishedItems = document.querySelectorAll(".not").length;
-    var percentage = document.getElementById("percentage");
+    var percentageElement = document.getElementById("percentage");
 
-    percentage.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
 }
 
 /*
@@ -49,9 +49,9 @@ function done(self) {
     /* Update percentage */
     var allItems = document.querySelectorAll(".item").length;
     var finishedItems = document.querySelectorAll(".not").length;
-    var percentage = document.getElementById("percentage");
+    var percentageElement = document.getElementById("percentage");
 
-    percentage.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
 }
 
 /*
@@ -64,9 +64,9 @@ function remove(self) {
     /* Update percentage */
     var allItems = document.querySelectorAll(".item").length;
     var finishedItems = document.querySelectorAll(".not").length;
-    var percentage = document.getElementById("percentage");
+    var percentageElement = document.getElementById("percentage");
 
-    percentage.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
 }
 
 /*
@@ -95,5 +95,23 @@ function finishDay() {
     var karmaElement = document.getElementById("karma");
     var karmaNow = karma / dayNumber;
     karmaElement.innerText = karmaNow.toFixed(1);
+}
 
+/*
+ * Reset all values.
+ */
+function startOver() {
+    var listElement = document.getElementById("list");
+    listElement.innerHTML = "";
+
+    var dayElement = document.getElementById("day");
+    dayElement.innerText = 1;
+
+    var percentageElement = document.getElementById("percentage");
+    percentageElement.innerText = 0;
+
+    var karmaElement = document.getElementById("karma");
+    karmaElement.innerText = 0;
+
+    karma = 0;
 }
