@@ -7,29 +7,9 @@
 </head>
 <body>
 
-    <!--
-        ID GUIDE:
-        * val           = INPUT, new item added to list
-        * list          = UL, where list items appear
-        * percentage    = SPAN, shows % done
-        * day           = SPAN, shows days starting with 1
-        * karma         = SPAN, shows average points over days
-        * finishday     = BUTTON, updates day number
-        * startover     = BUTTON, resets list, karma, day, % done
-    -->
-
-    <input type="text" name="val" id="val">
-    <button onclick="addElement();">Add</button>
-
-    <ul id="list"></ul>
-
-    <h1>You are <span id="percentage">0</span>% done.</h1>
-    <h1>You are on Day <span id="day">1</span>.</h1>
-    <h1>Your karma is <span id="karma">0.0</span>.</h1>
-
-    <button id="finishday" onclick="finishDay()">Finish Day</button>
-
-    <button id="startover" onclick="startOver()">Start Over</button>
+<p id="page">
+    You are an alien running away from your planet after committing a heinous crime. You find a placed called "Earth" and attempt to <a href="#" onclick="turnPage('dog')">blend in to hide from the Galactic Federation</a>.
+</p>
 
 </body>
 </html>
