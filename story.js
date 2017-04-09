@@ -9,7 +9,7 @@ var dog =
     like the planet Earth is dominated mainly by humans. There are many people 
     walking around and moving fast in box-like vehicles with wheels. You are 
     considering if you should 
-    <a href="#" onclick="turnPage('talkingDog')">talk to the dog</a> or 
+    <a href="#" onclick="addPage('talkingDog')">talk to the dog</a> or 
     <a href="#" onclick="turnPage('talkingHuman')">interact with a human</a>. 
     As different creatures, they probably have different social norms and 
     understandings.`;
@@ -77,30 +77,12 @@ var checkList =
  * TURN PAGES.
  */
 function turnPage(event) {
-    pageText = document.getElementById("page");
+    document.getElementById("page").innerHTML = eval(event);
+}
 
-    switch (event) {
-        case 'dog':
-        pageText.innerHTML = dog;
-        break;
-
-        case 'talkingDog':
-        pageText.innerHTML = talkingDog;
-        break;
-
-        case 'talkingHuman':
-        pageText.innerHTML = talkingHuman;
-        break;
-
-        case 'dogHome':
-        pageText.innerHTML = dogHome;
-        break;
-
-        case 'checkList':
-        pageText.innerHTML = checkList;
-        break;
-
-        default:
-        pageText.innerHTML = error;
-    }
+/*
+ * ADD ANOTHER TEXT SECTION TO CURRENT PAGE
+ */
+function addPage(event) {
+    document.body.innerHTML += eval(event);
 }
