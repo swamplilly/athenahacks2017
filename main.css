@@ -1,0 +1,9 @@
+.not.done, .done.not {
+    background: red;
+    text-decoration: none;
+}
+
+.done {
+    background: green;
+    text-decoration: line-through;
+}
