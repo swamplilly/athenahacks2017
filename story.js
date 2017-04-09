@@ -102,12 +102,12 @@ The atmosphere seems habitable. I'd better hideout here until the Galactic Feder
  * TURN PAGES.
  */
 function turnPage(event) {
-    document.getElementById("page").innerHTML = eval(event);
+    document.body.innerHTML = eval(event);
 }
 
 /*
  * ADD ANOTHER TEXT SECTION TO CURRENT PAGE
  */
 function addPage(event) {
-    document.getElementById("page") += eval(event);
+    document.body.innerHTML += eval(event);
 }
