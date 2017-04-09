@@ -1,3 +1,51 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    background-image: url("img/background/starrysky.png");
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: orange;
+}
+
+#titlewrapper {
+    margin: 0 auto;
+    display: table;
+}
+
+#title {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 40px;
+    transform: translateY(120%);
+    position: relative;
+    left: 0;
+    top: 50%;
+
+}
+
+#alien {
+    font-size: 48px;
+}
+
+#play {
+    font-size: 12px;
+    position: relative;
+    transform: translateX(-50%);
+}
+
+img {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
 .not.done, .done.not {
     background: red;
     text-decoration: none;
