@@ -1,4 +1,6 @@
 var karma = 0;
+var allItems = 0;
+var finishedItems = 0;
 
 /*
  * Add an element to the to-do list.
@@ -6,6 +8,7 @@ var karma = 0;
 function addElement() {
     var listElement = document.getElementById("list");
     var valToAdd = document.getElementById("val").value;
+    allItems += 1;
 
     /* Add an item to the list */
     listElement.innerHTML +=
@@ -22,11 +25,8 @@ function addElement() {
         </li>';
 
     /* Update percentage */
-    var allItems = document.querySelectorAll(".item").length;
-    var finishedItems = document.querySelectorAll(".not").length;
     var percentageElement = document.getElementById("percentage");
-
-    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
 }
 
 /*
@@ -40,33 +40,36 @@ function done(self) {
     /* Unchecking finished item */
     if (itemClassList.contains("not")) {
         itemClassList.remove("not");
+        finishedItems += 1;
 
     /* Checking off finished item */
     } else {
         itemClassList.add("not");
+        finishedItems -= 1;
     }
 
     /* Update percentage */
-    var allItems = document.querySelectorAll(".item").length;
-    var finishedItems = document.querySelectorAll(".not").length;
     var percentageElement = document.getElementById("percentage");
-
-    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
 }
 
 /*
  * Remove an item from the to-do list.
  */
 function remove(self) {
+    if (self.classList.contains("not")) {
+        allItems -= 1;
+    } else {
+        finishedItems -=1;
+        allItems -=1;
+    }
+
     /* Remove li element */
     self.parentElement.remove();
 
     /* Update percentage */
-    var allItems = document.querySelectorAll(".item").length;
-    var finishedItems = document.querySelectorAll(".not").length;
     var percentageElement = document.getElementById("percentage");
-
-    percentageElement.innerText = parseInt(((allItems - finishedItems) / allItems) * 100);
+    percentageElement.innerText = parseInt((finishedItems / allItems) * 100);
 }
 
 /*
@@ -114,4 +117,6 @@ function startOver() {
     karmaElement.innerText = 0;
 
     karma = 0;
+    allItems = 0;
+    finishedItems = 0;
 }
