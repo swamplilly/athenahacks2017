@@ -75,26 +75,43 @@ var checkList =
 
 var crime_1 = 
 `
-<br>
+<br><br>
 WE KNOW YOU ARE HIDING. TURN YOURSELF IN IMMEDIATELY OR FACE 
 <a href="#" onclick="addPage('warning')">ADDITIONAL CONSEQUENCES</a>`;
 
 var warning = 
 `
-<br>
+<br><br><br>
 YOU HAVE BEEN <a href="#" onclick="turnPage('earth')">WARNED.</a>`;
 
 
 var earth = 
 `
-<br>
+<br><br>
 Huh.. what is this <a href="#" onclick="addPage('habitable')">place</a>`;
 
 var habitable = 
 `
-<br>
+<p>
+<br><br>
 The atmosphere seems habitable. I'd better hideout here until the Galactic Federation
- <a href="#" onclick="turnPage('crash')">leaves me alone..</a>` ;
+ <a href="#" onclick="turnPage('crash')">leaves me alone..</a></p>` ;
+
+ var crash = 
+ `
+ <p><br><br>The ASTRODONUT crashed into a <a href="#" onclick="addPage('forest')">forest</a></p>`;
+
+ var forest = 
+ `
+ <br> You wake up to the sound of a hairy earthling masticating at your 
+ <a href="#" onclick="turnPage('dog1')">ship</a></p>`;
+
+ var dog1  = 
+ `<p><br><br>Arf! u look kinda <a href="#" onclick="addPage('funny')">funny</a></p>`;
+
+ var funny = 
+ ` <br>...<br> <br> and u smell kinda funny. <br> <a href="checklist.html">who are u</a></p>`; 
+
 
 
 

@@ -57,74 +57,126 @@ switch(parseInt(percent)) {
         case 28:
         case 29:
         case 30:
+        case 31:
         return '<img src="img/donuts/donutparts/76.png">'
         break;
 
         case 32:
+        case 33:
+        case 34:
+        case 35:
         return '<img src="img/donuts/donutparts/72.png">'
         break;
 
         case 36:
+        case 37:
+        case 38:
+        case 39:
         return '<img src="img/donuts/donutparts/68.png">'
         break;
 
         case 40:
+        case 41:
+        case 42:
+        case 43:
         return '<img src="img/donuts/donutparts/64.png">'
         break;
 
         case 44:
+        case 45:
+        case 46:
+        case 47:
         return '<img src="img/donuts/donutparts/60.png">'
         break;
 
         case 48:
+        case 49:
+        case 50:
+        case 51:
         return '<img src="img/donuts/donutparts/56.png">'
         break;
 
         case 52:
+        case 53:
+        case 54:
+        case 55:
         return '<img src="img/donuts/donutparts/52.png">'
         break;
 
         case 56:
+        case 57:
+        case 58:
+        case 59:
         return '<img src="img/donuts/donutparts/48.png">'
         break;
 
         case 60:
+        case 61:
+        case 62:
+        case 63:
         return '<img src="img/donuts/donutparts/44.png">'
         break;
 
         case 64:
+        case 65:
+        case 66:
+        case 67:
         return '<img src="img/donuts/donutparts/40.png">'
         break;
 
         case 68:
+        case 69:
+        case 70:
+        case 71:
         return '<img src="img/donuts/donutparts/36.png">'
         break;
 
         case 72:
+        case 73:
+        case 74:
+        case 75:
         return '<img src="img/donuts/donutparts/32.png">'
         break;
 
         case 76:
+        case 77:
+        case 78:
+        case 79:
         return '<img src="img/donuts/donutparts/28.png">'
         break;
 
         case 80:
+        case 81:
+        case 82:
+        case 83:
         return '<img src="img/donuts/donutparts/24.png">'
         break;
 
         case 84:
+        case 85:
+        case 86:
+        case 87:
         return '<img src="img/donuts/donutparts/20.png">'
         break;
 
         case 88:
+        case 89:
+        case 90:
+        case 91:
         return '<img src="img/donuts/donutparts/15.png">'
         break;
 
         case 92:
+        case 93:
+        case 94:
+        case 95:
         return '<img src="img/donuts/donutparts/10.png">'
         break;
 
         case 96:
+        case 97:
+        case 98:
+        case 99:
         return '<img src="img/donuts/donutparts/05.png">'
         break;
 
